@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BNi 트레이닝 | 대한민국 No.1 비즈니스 네트워킹 트레이닝</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: { extend: {
+          colors: {
+            surface:"#ffffff", "surface-low":"#f6f7f8", "surface-2":"#edeeef",
+            ink:"#17171c", "ink-2":"#5a5a66", "ink-3":"#8a8a96",
+            line:"#e6e7ea",
+            primary:"#e60023", "primary-dark":"#c8102e", "primary-soft":"#ffe5e8",
+            ng:"#15151b", ng2:"#22232b",
+            accent:"#2563eb"
+          },
+          borderRadius:{ DEFAULT:"0.375rem", lg:"0.5rem", xl:"0.75rem", "2xl":"1rem" }
+        }}
+      }
+    </script>
+<style>
+    body{font-family:'Inter','Noto Sans KR',sans-serif;background:#fff;color:#17171c;}
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+    .no-sb::-webkit-scrollbar{display:none;} .no-sb{-ms-overflow-style:none;scrollbar-width:none;}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+    .thumb{position:relative;aspect-ratio:4/3;border-radius:.5rem;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#edeeef;}
+    .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+    .group:hover .thumb img{transform:scale(1.05);}
+    .badge{position:absolute;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;z-index:2;}
+    .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .chip{font-size:13px;font-weight:600;padding:7px 14px;border-radius:9999px;border:1px solid #e6e7ea;color:#5a5a66;white-space:nowrap;cursor:pointer;transition:.15s;}
+    .chip:hover{border-color:#17171c;color:#17171c;}
+    .chip.on{background:#17171c;color:#fff;border-color:#17171c;}
+    ::-webkit-scrollbar{width:9px;height:9px;}::-webkit-scrollbar-thumb{background:#d6d7da;border-radius:5px;}
+    a{cursor:pointer;}
+  </style>
+</head>
+<body class="bg-surface text-ink">
+
+<!-- ===== Top utility bar ===== -->
+<div class="bg-ng text-white text-[13px]">
+<div class="wrap flex items-center justify-between h-9">
+<p class="truncate text-white/80"><span class="text-primary font-bold">[공지]</span> 2026 상반기 챕터 합동 트레이닝 일정 안내 — 신청은 6/20까지</p>
+<div class="flex items-center gap-3">
+<a class="bg-primary px-3 py-1 rounded font-bold whitespace-nowrap">오픈 세미나 확인</a>
+<button class="text-white/60 hover:text-white"><span class="material-symbols-outlined text-[18px] align-middle">close</span></button>
+</div>
+</div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur border-b border-line">
+<div class="wrap flex items-center gap-6 h-16">
+<a class="flex items-center gap-2 flex-shrink-0">
+<span class="w-7 h-7 rounded-full bg-primary text-white grid place-items-center font-black text-sm">B</span>
+<span class="text-xl font-black tracking-tight">BNi <span class="text-primary">트레이닝</span></span>
+</a>
+<div class="flex-1 max-w-xl hidden md:block">
+<div class="relative">
+<input class="w-full bg-surface-low border border-line rounded-full pl-5 pr-11 py-2.5 text-sm focus:ring-2 focus:ring-primary focus:bg-white" placeholder="관심 트레이닝, 챕터, 강사를 검색해 보세요"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-ink-3">search</span>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-auto text-sm">
+<a class="hidden sm:block text-ink-2 hover:text-ink font-semibold">로그인</a>
+<a class="hidden sm:block text-ink-2 hover:text-ink font-semibold">회원가입</a>
+<a class="bg-ink text-white px-4 py-2 rounded-lg font-bold hover:bg-ng">기업 멤버십</a>
+</div>
+</div>
+<!-- category + nav row -->
+<div class="border-t border-line">
+<div class="wrap flex items-center gap-6 h-12 overflow-x-auto no-sb text-sm">
+<button class="flex items-center gap-2 font-bold text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">menu</span>카테고리</button>
+<nav class="flex items-center gap-6 text-ink-2 font-semibold flex-shrink-0">
+<a class="hover:text-primary">평생 멤버십 1:1</a>
+<a class="hover:text-primary">트레이닝 BEST</a>
+<a class="hover:text-primary">신규 오픈</a>
+<a class="hover:text-primary">환급 이벤트</a>
+<a class="hover:text-primary text-primary font-bold">세미나</a>
+<a class="hover:text-primary">챕터</a>
+<a class="hover:text-primary">국비지원</a>
+<a class="hover:text-primary">멤버 후기</a>
+</nav>
+</div>
+</div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="bg-ng">
+<div class="wrap py-7">
+<div class="flex gap-4 items-stretch">
+<div class="hidden lg:flex w-1/4 rounded-xl bg-ng2 p-6 flex-col justify-center opacity-60">
+<p class="text-white/50 text-sm mb-2">이전</p>
+<h3 class="text-white text-lg font-bold leading-snug">당신의 커리어를<br/>날카로운 인사이트로.</h3>
+</div>
+<div class="flex-1 relative rounded-xl overflow-hidden bg-black min-h-[280px] flex items-center">
+<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&h=500&q=70" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+<div class="relative px-10 py-10 z-10">
+<p class="text-white/60 mb-3">지금 신청할 수 있는 무료 세미나 확인하기 (click)</p>
+<h2 class="text-white text-3xl md:text-4xl font-black leading-tight">최신 인사이트와 노하우를<br/><span class="text-primary">무료 라이브 세미나</span>로.</h2>
+<button class="mt-6 bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-dark">Open Seminar 신청 →</button>
+</div>
+<div class="absolute right-10 top-1/2 -translate-y-1/2 text-white text-5xl md:text-6xl font-black leading-none text-right hidden md:block">Open<br/>Seminar</div>
+<div class="absolute bottom-4 left-10 text-white/60 text-sm">12 / 16</div>
+<div class="absolute bottom-4 right-6 flex items-center gap-2 text-white/70">
+<button class="w-8 h-8 grid place-items-center rounded-full bg-white/10 hover:bg-white/20"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="w-8 h-8 grid place-items-center rounded-full bg-white/10 hover:bg-white/20"><span class="material-symbols-outlined text-[18px]">pause</span></button>
+<button class="w-8 h-8 grid place-items-center rounded-full bg-white/10 hover:bg-white/20"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+<div class="hidden lg:flex w-1/4 rounded-xl bg-ng2 p-6 flex-col justify-center opacity-60">
+<p class="text-white/50 text-sm mb-2">다음</p>
+<h3 class="text-white text-lg font-bold leading-snug">멤버 비즈니스를<br/>폭발적으로 성장시키는 법.</h3>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Category icons ===== -->
+<section class="wrap py-8">
+<div class="flex items-start justify-between gap-4 overflow-x-auto no-sb">
+<script id="cat-tpl"></script>
+<div id="catRow" class="flex gap-6 md:gap-8 mx-auto"></div>
+</div>
+</section>
+
+<!-- ===== 실시간 BEST ===== -->
+<section class="wrap pb-12">
+<p class="text-primary font-extrabold text-sm mb-1">BEST</p>
+<h2 class="text-2xl font-black mb-1">실시간 BEST 인기 트레이닝</h2>
+<p class="text-ink-2 text-sm mb-4">가장 많은 멤버들이 주목하는 TOP 5 트레이닝을 만나보세요.</p>
+<div class="flex gap-2 mb-6 overflow-x-auto no-sb">
+<span class="chip on">전체</span><span class="chip">네트워킹</span><span class="chip">1:1 미팅</span><span class="chip">발표 스킬</span><span class="chip">리더십</span><span class="chip">비즈니스 성장</span><span class="chip">신규 멤버</span>
+</div>
+<div id="bestGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-7"></div>
+</section>
+
+<!-- pink strip -->
+<div class="bg-primary-soft">
+<div class="wrap py-3 flex items-center justify-center gap-2 text-sm font-semibold text-primary-dark">
+<span class="material-symbols-outlined text-[18px]">favorite</span> 관심있는 트레이닝 정보, 맞춤 트레이닝을 추천해드려요!
+</div>
+</div>
+
+<!-- ===== 신규 오픈 (LIVE) ===== -->
+<section class="wrap py-12">
+<p class="text-primary font-extrabold text-sm mb-1">NEW</p>
+<div class="flex items-end justify-between mb-4">
+<div><h2 class="text-2xl font-black">신규 오픈 트레이닝</h2><p class="text-ink-2 text-sm mt-1">따끈따끈 진행 예정인 신규 트레이닝을 살펴보세요.</p></div>
+<div class="hidden md:flex items-center gap-1 text-ink-2"><span class="text-sm">1 / 3</span>
+<button class="w-8 h-8 grid place-items-center rounded-full border border-line hover:bg-surface-low"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="w-8 h-8 grid place-items-center rounded-full border border-line hover:bg-surface-low"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button></div>
+</div>
+<div class="flex gap-2 mb-6 overflow-x-auto no-sb">
+<span class="chip on">전체</span><span class="chip">네트워킹</span><span class="chip">1:1 미팅</span><span class="chip">발표 스킬</span><span class="chip">리더십</span><span class="chip">신규 멤버</span>
+</div>
+<div id="liveGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+<!-- promo banner -->
+<a class="mt-8 rounded-xl overflow-hidden flex items-center justify-between p-8 bg-gradient-to-r from-[#0b1c3a] to-[#0a2a5e] text-white hover:opacity-95 transition">
+<div>
+<p class="text-white/60 mb-2 font-semibold tracking-wide">BNi 코리아 공식 인증 · APEX</p>
+<h3 class="text-2xl font-black leading-snug">검증된 네트워킹 역량,<br/>비즈니스 성과로 증명하세요.</h3>
+<span class="inline-block mt-4 text-white/80 font-semibold">바로 확인하기 →</span>
+</div>
+<span class="text-4xl font-black tracking-tight hidden sm:block">BNi <span class="text-white/40">× </span>APEX</span>
+</a>
+<div class="text-center mt-8"><button class="px-6 py-3 rounded-full border border-line text-sm font-semibold text-ink-2 hover:bg-surface-low">더 많은 신규 트레이닝 보러가기 →</button></div>
+</section>
+
+<!-- ===== 인기 검색어 ===== -->
+<section class="bg-surface-low py-12">
+<div class="wrap grid md:grid-cols-2 gap-x-16 gap-y-10">
+<div>
+<div class="flex items-baseline justify-between mb-5"><h2 class="text-xl font-black">월간 인기 검색어</h2><span class="text-xs text-ink-3">2026.06.01 기준</span></div>
+<ul id="rankA" class="grid grid-cols-2 gap-x-10 gap-y-3.5"></ul>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-5"><h2 class="text-xl font-black">실시간 급상승 검색어</h2><span class="text-xs text-ink-3">방금 업데이트</span></div>
+<ul id="rankB" class="grid grid-cols-2 gap-x-10 gap-y-3.5"></ul>
+</div>
+</div>
+</section>
+
+<!-- ===== MEDIA ===== -->
+<section class="wrap py-14">
+<p class="text-primary font-extrabold text-sm mb-1">MEDIA</p>
+<h2 class="text-2xl font-black mb-1">지금 바로 읽어둬야 하는 핫이슈</h2>
+<p class="text-ink-2 text-sm mb-6">날선 인사이트를 담은 BNi 아티클을 만나보세요.</p>
+<div id="mediaGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8"></div>
+<div class="text-center mt-8"><button class="px-6 py-3 rounded-full border border-line text-sm font-semibold text-ink-2 hover:bg-surface-low">더 많은 아티클 보러가기 →</button></div>
+</section>
+
+<!-- ===== 키워드별 RISING ===== -->
+<section class="wrap pb-14">
+<h2 class="text-2xl font-black mb-6">키워드별 RISING CLASS</h2>
+<div id="risingRows" class="space-y-3"></div>
+</section>
+
+<!-- ===== NOW 기획전 ===== -->
+<section class="bg-ng py-14">
+<div class="wrap">
+<p class="text-primary font-extrabold text-sm mb-1">NOW</p>
+<h2 class="text-2xl font-black text-white mb-6">지금 진행 중인 기획전</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<a class="thumb !aspect-[3/4] group hover:opacity-95">
+<img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&h=800&q=70" alt=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+<div class="absolute inset-0 p-6 flex flex-col items-start justify-end text-left">
+<span class="text-primary font-bold mb-1">무료 라이브 세미나</span><span class="text-3xl font-black text-white">Open<br/>Seminar</span></div></a>
+<a class="thumb !aspect-[3/4] group hover:opacity-95">
+<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&h=800&q=70" alt=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+<div class="absolute inset-0 p-6 flex flex-col items-start justify-end text-left">
+<span class="text-white/70 font-bold mb-1">누구나 시작하기 좋은</span><span class="text-3xl font-black text-primary">Zero-Level<br/>.zip</span></div></a>
+<a class="thumb !aspect-[3/4] group hover:opacity-95">
+<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=600&h=800&q=70" alt=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+<div class="absolute inset-0 p-6 flex flex-col items-start justify-end text-left">
+<span class="text-white/70 font-bold mb-1">멤버 성장 트랙</span><span class="text-3xl font-black text-white">CAREER<br/>TRACK</span></div></a>
+</div>
+</div>
+</section>
+
+<!-- ===== 트레이닝 바로가기 (chapters) ===== -->
+<section class="wrap py-14">
+<h2 class="text-2xl font-black mb-1">트레이닝 바로가기</h2>
+<p class="text-ink-2 text-sm mb-6">우리 지역 챕터의 트레이닝 일정을 확인하세요.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<a href="renewal.html" class="rounded-xl border border-line p-7 flex flex-col items-center gap-2 hover:border-primary hover:shadow-md transition">
+<span class="text-primary font-black text-xl">BNi 마포</span><span class="text-xs text-ink-2">트레이닝 캘린더 →</span></a>
+<a href="renewal.html" class="rounded-xl border border-line p-7 flex flex-col items-center gap-2 hover:border-primary hover:shadow-md transition">
+<span class="text-primary font-black text-xl">BNi 영등포</span><span class="text-xs text-ink-2">트레이닝 캘린더 →</span></a>
+<a href="renewal.html" class="rounded-xl border border-line p-7 flex flex-col items-center gap-2 hover:border-primary hover:shadow-md transition">
+<span class="text-primary font-black text-xl">BNi 서초</span><span class="text-xs text-ink-2">트레이닝 캘린더 →</span></a>
+<a href="renewal.html" class="rounded-xl border border-line p-7 flex flex-col items-center gap-2 hover:border-primary hover:shadow-md transition">
+<span class="text-primary font-black text-xl">BNi 수원1</span><span class="text-xs text-ink-2">트레이닝 캘린더 →</span></a>
+</div>
+</section>
+
+<!-- ===== 공지 + social ===== -->
+<section class="bg-surface-low py-10">
+<div class="wrap grid md:grid-cols-[1fr_auto] gap-8 items-center">
+<div>
+<h3 class="font-black mb-3">공지사항</h3>
+<ul class="divide-y divide-line text-sm">
+<li class="flex justify-between py-2.5"><a class="text-ink-2 hover:text-primary truncate">2026 상반기 챕터 합동 트레이닝 일정 안내</a><span class="text-ink-3 flex-shrink-0 ml-4">2026.06.11</span></li>
+<li class="flex justify-between py-2.5"><a class="text-ink-2 hover:text-primary truncate">[공지] 멤버 운영정책 개정 사전 안내 (시행일 2026.06.27)</a><span class="text-ink-3 flex-shrink-0 ml-4">2026.06.05</span></li>
+<li class="flex justify-between py-2.5"><a class="text-ink-2 hover:text-primary truncate">[공지] 개인정보처리방침 변경 (2026.03.03)</a><span class="text-ink-3 flex-shrink-0 ml-4">2026.05.22</span></li>
+</ul>
+</div>
+<div>
+<h3 class="font-black mb-3">BNi 트레이닝 바로가기</h3>
+<div class="flex flex-wrap gap-2">
+<a class="flex items-center gap-1.5 bg-white border border-line rounded-full pl-1.5 pr-3 py-1 text-sm"><span class="w-6 h-6 rounded-full bg-ng text-white grid place-items-center text-[11px]">B</span>Naver Blog</a>
+<a class="flex items-center gap-1.5 bg-white border border-line rounded-full pl-1.5 pr-3 py-1 text-sm"><span class="w-6 h-6 rounded-full bg-ng text-white grid place-items-center text-[11px]">I</span>Instagram</a>
+<a class="flex items-center gap-1.5 bg-white border border-line rounded-full pl-1.5 pr-3 py-1 text-sm"><span class="w-6 h-6 rounded-full bg-ng text-white grid place-items-center text-[11px]">Y</span>Youtube</a>
+<a class="flex items-center gap-1.5 bg-white border border-line rounded-full pl-1.5 pr-3 py-1 text-sm"><span class="w-6 h-6 rounded-full bg-ng text-white grid place-items-center text-[11px]">X</span>X (twitter)</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-ng text-white/60 text-sm">
+<div class="wrap py-10">
+<div class="flex flex-wrap gap-x-6 gap-y-2 font-semibold text-white/80 mb-6 pb-6 border-b border-white/10">
+<a class="hover:text-white">회사소개</a><a class="hover:text-white">강사지원</a><a class="hover:text-white">제휴/협력</a><a class="hover:text-white">멤버십안내</a><a class="hover:text-white">고객센터</a><a class="hover:text-white text-primary">이용약관</a><a class="hover:text-white">개인정보처리방침</a>
+</div>
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-1 leading-relaxed text-white/50 text-[13px]">
+<p class="text-lg font-black text-white mb-2">BNi <span class="text-primary">트레이닝</span></p>
+<p>(주)BNi 코리아 · 대표 홍길동 · 사업자등록번호 000-00-00000</p>
+<p>서울특별시 마포구 트레이닝로 00, 0층 · 통신판매업 0000-서울마포-0000</p>
+<p>고객센터 1600-0000 (평일 10:00~18:00) · help@bni-training.co.kr</p>
+<p class="pt-2">© 2026 BNi Korea. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+
+<button class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-ng text-white grid place-items-center shadow-lg z-50"><span class="material-symbols-outlined">chat</span></button>
+
+<script>
+  // ---------- category icons ----------
+  const cats=[["hub","네트워킹"],["forum","1:1 미팅"],["co_present","발표 스킬"],["workspace_premium","리더십"],
+    ["trending_up","비즈니스 성장"],["groups","신규 멤버"],["handshake","제휴/추천"],["school","멤버 교육"],
+    ["emoji_events","챕터 어워드"],["apps","전체 보기"]];
+  document.getElementById('catRow').innerHTML = cats.map(([ic,t])=>`
+    <a class="flex flex-col items-center gap-2 flex-shrink-0 group">
+      <span class="w-14 h-14 rounded-2xl bg-primary-soft text-primary grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+        <span class="material-symbols-outlined">${ic}</span></span>
+      <span class="text-xs font-semibold text-ink-2 group-hover:text-ink whitespace-nowrap">${t}</span></a>`).join('');
+
+  // ---------- real photo helper (Unsplash curated, deterministic) ----------
+  const photos=[
+    "photo-1521737604893-d14cc237f11d","photo-1556761175-5973dc0f32e7","photo-1542744173-8e7e53415bb0",
+    "photo-1600880292203-757bb62b4baf","photo-1551836022-d5d88e9218df","photo-1517048676732-d65bc937f952",
+    "photo-1521791136064-7986c2920216","photo-1573164713988-8665fc963095","photo-1559136555-9303baea8ebd",
+    "photo-1531482615713-2afd69097998","photo-1552664730-d307ca884978","photo-1591115765373-5207764f72e7",
+    "photo-1454165804606-c3d57bc86b40","photo-1542744094-3a31f272c490","photo-1517245386807-bb43f82c33c4",
+    "photo-1556157382-97eda2d62296","photo-1517502884422-41eaead166d4","photo-1488998427799-e3362cec87c3",
+    "photo-1560250097-0b93528c311a","photo-1573497019940-1c28c88b4f3e"];
+  const ph=(i,w=600,h=420)=>`https://images.unsplash.com/${photos[i%photos.length]}?auto=format&fit=crop&w=${w}&h=${h}&q=70`;
+
+  // ---------- 실시간 BEST cards ----------
+  const best=[
+    {tag:"네트워킹",t:"멤버 비즈니스를 폭발시키는 BNi 위클리 미팅 운영법",who:"김지훈 디렉터",dc:53,p:"280,000",b:"BEST"},
+    {tag:"1:1 미팅",t:"성과로 이어지는 1:1 미팅 스킬 완전정복",who:"박서연 트레이너",dc:81,p:"239,000",b:"신규멤버"},
+    {tag:"발표 스킬",t:"60초 비즈니스 스피치 — 레퍼럴을 부르는 발표법",who:"이정민 디렉터",dc:40,p:"270,000",b:"BEST"},
+    {tag:"리더십",t:"챕터를 성장시키는 리더십 트레이닝 마스터 과정",who:"최우진 트레이너",dc:35,p:"245,000",b:""},
+    {tag:"비즈니스 성장",t:"레퍼럴 마케팅으로 매출 2배 만드는 실전 전략",who:"정하늘 디렉터",dc:74,p:"250,000",b:"BEST"},
+  ];
+  document.getElementById('bestGrid').innerHTML = best.map((c,i)=>cardCourse(c,i)).join('');
+  function cardCourse(c,i){return `
+    <a class="block group">
+      <div class="thumb">
+        <img loading="lazy" src="${ph(i)}" alt=""/>
+        ${c.b?`<span class="badge top-2 left-2 bg-primary text-white">${c.b}</span>`:''}
+        <span class="badge bottom-2 left-2 bg-black/55 text-white backdrop-blur-sm">#${c.tag}</span>
+      </div>
+      <p class="mt-2.5 text-[13px] font-bold leading-snug line-clamp-2 group-hover:text-primary">${c.t}</p>
+      <p class="text-xs text-ink-3 mt-1">${c.who}</p>
+      <p class="mt-1.5"><span class="text-primary font-black">${c.dc}%</span> <span class="font-black">${c.p}원</span></p>
+    </a>`;}
+
+  // ---------- 신규 LIVE cards ----------
+  const live=[
+    {t:"멤버 성장을 이끄는 챕터 운영 — 트레이닝 4주 완성",sub:"Open Seminar",foot:"06.18 무료 · 라이브"},
+    {t:"레퍼럴을 부르는 1:1 미팅 치트키 — 비즈니스의 모든 것",sub:"Open Seminar",foot:"06.22 무료 · 라이브"},
+    {t:"신규 멤버를 위한 온보딩 트레이닝 — 첫 90일 로드맵",sub:"Open Seminar",foot:"06.25 무료 · 라이브"},
+  ];
+  document.getElementById('liveGrid').innerHTML = live.map((c,i)=>`
+    <a class="block group">
+      <div class="thumb !aspect-video">
+        <img loading="lazy" src="${ph(i+5,800,450)}" alt=""/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10"></div>
+        <span class="badge top-3 left-3 bg-primary text-white flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-white"></span>LIVE</span>
+        <div class="absolute bottom-0 left-0 right-0 p-4 text-left">
+          <span class="block text-white font-black text-base leading-tight line-clamp-2">${c.t}</span>
+          <span class="block text-white/70 text-xs mt-1.5">${c.sub}</span>
+        </div>
+      </div>
+      <p class="text-xs text-ink-3 mt-2">${c.foot}</p>
+    </a>`).join('');
+
+  // ---------- 인기 검색어 ----------
+  const kw=["네트워킹","1:1 미팅","레퍼럴","리더십","온보딩","발표 스킬","비즈니스 성장","챕터","멤버 교육","어워드"];
+  const mv=["up","up","up","down","same","up","down","up","up","down"];
+  function rank(el,arr,mvs){document.getElementById(el).innerHTML=arr.map((w,i)=>{
+    const m=mvs[i];const ico=m==="up"?'<span class="material-symbols-outlined text-[16px] text-primary">arrow_drop_up</span>':m==="down"?'<span class="material-symbols-outlined text-[16px] text-accent">arrow_drop_down</span>':'<span class="text-ink-3 text-xs px-1">–</span>';
+    return `<li class="flex items-center gap-3 text-sm"><span class="font-black ${i<3?'text-primary':'text-ink'} w-4">${i+1}</span>${ico}<span class="text-ink-2 hover:text-ink cursor-pointer">${w}</span></li>`;}).join('');}
+  rank('rankA',kw,mv);
+  rank('rankB',["1:1 미팅","레퍼럴","온보딩","멤버 교육","발표 스킬","네트워킹","챕터","리더십","비즈니스 성장","어워드"],["up","up","up","up","same","down","up","up","down","up"]);
+
+  // ---------- MEDIA ----------
+  const media=[
+    {t:"네트워킹 시대의 새로운 표준, BNi 위클리 미팅을 만드는 이유",tag:"네트워킹"},
+    {t:"성공한 멤버들이 매주 지키는 1:1 미팅의 모든 것",tag:"1:1 미팅"},
+    {t:"레퍼럴 한 건이 비즈니스를 바꾼다 — 추천의 과학",tag:"레퍼럴"},
+    {t:"좋은 리더가 챕터를 키운다 — 리더십 트레이닝 사례",tag:"리더십"},
+    {t:"신규 멤버 첫 90일, 온보딩이 만드는 차이",tag:"온보딩"},
+    {t:"60초 스피치로 비즈니스를 여는 발표의 기술",tag:"발표 스킬"},
+    {t:"비즈니스 성장은 결국 관계의 깊이에서 온다",tag:"비즈니스 성장"},
+    {t:"올해의 챕터는 무엇이 달랐나 — 어워드 비하인드",tag:"어워드"},
+  ];
+  document.getElementById('mediaGrid').innerHTML = media.map((c,i)=>`
+    <a class="block group">
+      <div class="thumb !aspect-[5/3]"><img loading="lazy" src="${ph(i+8)}" alt=""/></div>
+      <p class="mt-2.5 text-[13px] font-bold leading-snug line-clamp-2 group-hover:text-primary">${c.t}</p>
+      <div class="mt-1.5 flex gap-1.5"><span class="text-[11px] text-ink-3 bg-surface-low px-2 py-0.5 rounded">#${c.tag}</span></div>
+    </a>`).join('');
+
+  // ---------- RISING rows ----------
+  const rising=[["네트워킹","#네트워킹"],["1:1 미팅","#미팅스킬"],["리더십","#리더십"],["레퍼럴","#레퍼럴마케팅"]];
+  document.getElementById('risingRows').innerHTML = rising.map(([key,hash],r)=>`
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 items-stretch">
+      <div class="rounded-lg bg-[#ffd400] p-4 flex flex-col justify-between min-h-[120px]">
+        <span class="text-xl font-black text-ng leading-tight">${key}</span>
+        <span class="text-ng/70 text-xs font-bold">${hash} · 전체보기 →</span>
+      </div>
+      ${[0,1,2,3].map(k=>`<a class="block group">
+        <div class="thumb !aspect-video"><img loading="lazy" src="${ph(r*4+k+3,800,450)}" alt=""/>
+          <span class="badge bottom-2 left-2 bg-black/55 text-white backdrop-blur-sm">#${key}</span></div>
+        <p class="mt-2 text-xs font-bold leading-snug line-clamp-2 group-hover:text-primary">${key} 실전 트레이닝 ${k+1}편 — 멤버 성장을 위한 핵심 과정</p>
+        <p class="text-[11px] text-primary font-black mt-1">${30+k*8}% 199,000원</p>
+      </a>`).join('')}
+    </div>`).join('');
+</script>
+</body></html>

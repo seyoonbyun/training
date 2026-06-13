@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BNi | 트레이닝 캘린더</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config (BNi Red theme) -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f4f5f6",
+                    "surface-container": "#edeeef",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-surface": "#1c1a1a",
+                    "on-surface-variant": "#534344",
+                    "outline": "#857373",
+                    "outline-variant": "#dadce0",
+                    "background": "#ffffff",
+                    "on-background": "#1c1a1a",
+
+                    "primary": "#c8102e",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#e11933",
+                    "on-primary-container": "#ffe1e2",
+                    "primary-fixed": "#ffdada",
+                    "on-primary-fixed": "#410006",
+                    "on-primary-fixed-variant": "#a4001b",
+
+                    "secondary": "#1f2937",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#374151",
+                    "on-secondary-container": "#e5e7eb",
+                    "on-secondary-fixed-variant": "#374151",
+
+                    "tertiary": "#9a6700",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#b8860b",
+                    "on-tertiary-fixed-variant": "#7a5200",
+
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Noto Sans KR', sans-serif; background-color: #ffffff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        /* Google Calendar style grid */
+        .gcal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(6, minmax(0, 1fr));
+            border-top: 1px solid #dadce0;
+            border-left: 1px solid #dadce0;
+        }
+        .gcal-cell {
+            border-right: 1px solid #dadce0;
+            border-bottom: 1px solid #dadce0;
+            padding: 4px 6px;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            cursor: pointer;
+            transition: background-color .15s ease;
+            overflow: hidden;
+        }
+        .gcal-cell:hover { background-color: #f4f5f6; }
+        .gcal-cell.selected { background-color: #fff3f4; }
+        .daynum {
+            font-size: 12px;
+            font-weight: 600;
+            width: 24px; height: 24px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px;
+            margin: 0 auto 0 0;
+        }
+        .daynum.today { background-color: #c8102e; color: #fff; }
+        .ev {
+            font-size: 11px; line-height: 15px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            font-weight: 600;
+        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e1e3e4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #dadce0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- ===== Top Navigation Bar (was left sidebar) ===== -->
+<header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center justify-between px-5 h-16">
+<!-- Brand + primary nav -->
+<div class="flex items-center gap-8">
+<div class="flex items-baseline gap-2">
+<h1 class="text-2xl font-extrabold tracking-tight text-primary">BNi</h1>
+<span class="hidden sm:inline text-xs font-semibold text-on-surface-variant">트레이닝 포털</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1">
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>트레이닝 홈</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>일정</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>메인 클래스</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">campaign</span>뉴스</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group_add</span>가입 안내</a>
+</nav>
+</div>
+<!-- Right actions -->
+<div class="flex items-center gap-2 sm:gap-3">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm w-40 lg:w-56 focus:ring-2 focus:ring-primary" placeholder="클래스 검색..." type="text"/>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hidden md:block px-5 py-2 bg-primary text-on-primary rounded-full text-sm font-semibold shadow-sm active:scale-95 transition-transform">회원가입</button>
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold flex-shrink-0">B</div>
+</div>
+</div>
+</header>
+
+<!-- Notice strip -->
+<div class="px-5 py-2.5 bg-primary-fixed/40 border-b border-outline-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+<span class="font-bold text-primary">[공지]</span>
+        BNi 코리아 이벤트·챕터데이 일정이 일부 변경되었습니다. 각 트레이닝 챕터별 공식 일정 및 오프라인/온라인 진행 여부를 확인해 주세요.
+    </p>
+</div>
+
+<!-- ===== Calendar toolbar ===== -->
+<div class="flex items-center justify-between px-5 py-3 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<button class="px-4 py-1.5 border border-outline-variant rounded-md text-sm font-semibold hover:bg-surface-container-low transition-colors">오늘</button>
+<div class="flex items-center gap-1">
+<button id="prevBtn" class="p-1.5 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_left</span></button>
+<button id="nextBtn" class="p-1.5 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<h2 class="text-xl font-bold text-on-surface whitespace-nowrap ml-1">2026년 6월</h2>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-1">
+<button class="px-4 py-1 rounded-md text-sm font-semibold bg-surface shadow-sm text-primary">월</button>
+<button class="px-4 py-1 rounded-md text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">주</button>
+<button class="px-4 py-1 rounded-md text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">일</button>
+</div>
+</div>
+
+<!-- ===== Full-width Google-style Calendar ===== -->
+<div class="flex flex-col" style="height: calc(100vh - 64px - 41px - 57px);">
+<!-- Day-of-week header -->
+<div class="grid grid-cols-7 border-b border-outline-variant flex-shrink-0">
+<div class="py-2 text-center text-xs font-semibold text-error">일</div>
+<div class="py-2 text-center text-xs font-semibold text-on-surface-variant">월</div>
+<div class="py-2 text-center text-xs font-semibold text-on-surface-variant">화</div>
+<div class="py-2 text-center text-xs font-semibold text-on-surface-variant">수</div>
+<div class="py-2 text-center text-xs font-semibold text-on-surface-variant">목</div>
+<div class="py-2 text-center text-xs font-semibold text-on-surface-variant">금</div>
+<div class="py-2 text-center text-xs font-semibold text-primary">토</div>
+</div>
+<div id="calGrid" class="gcal-grid flex-1"></div>
+</div>
+
+<!-- ===== Selected Day Training (dynamic, below calendar) ===== -->
+<section class="border-t-8 border-surface-container-low bg-surface-container-low px-5 py-6">
+<div class="flex items-center justify-between mb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<h3 class="text-xl font-bold">Selected Day Training</h3>
+</div>
+<p id="selectedDateLabel" class="text-on-surface-variant text-sm mt-0.5">날짜를 선택해 주세요</p>
+</div>
+<button class="text-primary text-sm font-semibold hover:underline">전체 보기</button>
+</div>
+<!-- dynamically rendered training cards -->
+<div id="detailGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline-variant bg-surface">
+<!-- 트레이닝 바로가기 : 4 boxes in one row -->
+<div class="px-5 pt-8 pb-6">
+<h5 class="text-sm font-bold text-on-surface-variant mb-3">트레이닝 바로가기</h5>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<a href="#" class="flex flex-col items-center justify-center gap-1.5 py-7 rounded-xl border border-outline-variant bg-surface hover:border-primary hover:shadow-md transition-all">
+<span class="text-primary font-extrabold text-lg">BNi 마포</span><span class="text-xs text-on-surface-variant">트레이닝 바로가기</span></a>
+<a href="#" class="flex flex-col items-center justify-center gap-1.5 py-7 rounded-xl border border-outline-variant bg-surface hover:border-primary hover:shadow-md transition-all">
+<span class="text-primary font-extrabold text-lg">BNi 영등포</span><span class="text-xs text-on-surface-variant">트레이닝 바로가기</span></a>
+<a href="#" class="flex flex-col items-center justify-center gap-1.5 py-7 rounded-xl border border-outline-variant bg-surface hover:border-primary hover:shadow-md transition-all">
+<span class="text-primary font-extrabold text-lg">BNi 서초</span><span class="text-xs text-on-surface-variant">트레이닝 바로가기</span></a>
+<a href="#" class="flex flex-col items-center justify-center gap-1.5 py-7 rounded-xl border border-outline-variant bg-surface hover:border-primary hover:shadow-md transition-all">
+<span class="text-primary font-extrabold text-lg">BNi 수원1</span><span class="text-xs text-on-surface-variant">트레이닝 바로가기</span></a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center px-5 py-5 gap-2 border-t border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-primary">BNi Korea</span>
+<span class="text-on-surface-variant text-xs">© 2026 BNi Korea. All rights reserved.</span>
+</div>
+<div class="flex gap-4">
+<a class="text-xs text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">이용약관</a>
+<a class="text-xs text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">개인정보처리방침</a>
+<a class="text-xs text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">문의하기</a>
+</div>
+</div>
+</footer>
+
+<script>
+    // June 2026: starts Monday, 30 days. (today highlight on the 9th as sample)
+    // each event: t(title) c(color) chapter trainer role time status
+    const events = {
+        1:  [{t:'마포 챕터 미팅', c:'primary', chapter:'마포 챕터', trainer:'김지훈', role:'디렉터', time:'07:00 - 09:00', status:'모집중'}],
+        2:  [{t:'영등포 1:1 미팅', c:'secondary', chapter:'영등포 챕터', trainer:'박서연', role:'트레이너', time:'14:00 - 15:30', status:'모집중'},
+             {t:'서초 오리엔테이션', c:'tertiary', chapter:'서초 챕터', trainer:'이정민', role:'디렉터', time:'19:00 - 21:00', status:'모집중'}],
+        4:  [{t:'수원1 멤버데이', c:'primary', chapter:'수원1 챕터', trainer:'정하늘', role:'디렉터', time:'07:00 - 09:00', status:'모집중'}],
+        8:  [{t:'리더십 트레이닝', c:'tertiary', chapter:'코리아 본부', trainer:'최우진', role:'대표 트레이너', time:'10:00 - 13:00', status:'모집중'}],
+        9:  [{t:'마포 멤버 트레이닝', c:'primary', chapter:'마포 챕터', trainer:'김지훈', role:'디렉터', time:'07:00 - 09:00', status:'진행중'},
+             {t:'영등포 미팅', c:'secondary', chapter:'영등포 챕터', trainer:'박서연', role:'트레이너', time:'14:00 - 15:30', status:'모집중'}],
+        11: [{t:'네트워킹 세미나', c:'secondary', chapter:'코리아 본부', trainer:'한지윤', role:'매니저', time:'18:30 - 20:30', status:'모집중'}],
+        15: [{t:'챕터 합동 트레이닝', c:'tertiary', chapter:'합동(4개 챕터)', trainer:'최우진', role:'대표 트레이너', time:'09:00 - 12:00', status:'모집중'}],
+        16: [{t:'신규 멤버 교육', c:'primary', chapter:'마포 챕터', trainer:'김지훈', role:'디렉터', time:'19:00 - 21:00', status:'모집중'}],
+        18: [{t:'비즈니스 발표회', c:'secondary', chapter:'서초 챕터', trainer:'이정민', role:'디렉터', time:'14:00 - 16:00', status:'모집중'}],
+        22: [{t:'서초 챕터 미팅', c:'primary', chapter:'서초 챕터', trainer:'이정민', role:'디렉터', time:'07:00 - 09:00', status:'모집중'}],
+        23: [{t:'리더 워크숍', c:'tertiary', chapter:'코리아 본부', trainer:'최우진', role:'대표 트레이너', time:'10:00 - 13:00', status:'모집중'}],
+        25: [{t:'수원1 멤버 트레이닝', c:'primary', chapter:'수원1 챕터', trainer:'정하늘', role:'디렉터', time:'07:00 - 09:00', status:'모집중'}],
+        29: [{t:'월말 결산 미팅', c:'secondary', chapter:'코리아 본부', trainer:'한지윤', role:'매니저', time:'18:00 - 20:00', status:'모집중'}],
+    };
+    const colorMap = {
+        primary:   'bg-primary-fixed text-on-primary-fixed-variant',
+        secondary: 'bg-secondary-container/15 text-on-secondary-fixed-variant',
+        tertiary:  'bg-tertiary-container/20 text-on-tertiary-fixed-variant',
+    };
+    const cardHeader = {
+        primary:   'from-primary to-primary-container',
+        secondary: 'from-secondary to-secondary-container',
+        tertiary:  'from-tertiary to-tertiary-container',
+    };
+    const onHeader = { primary:'text-on-primary', secondary:'text-on-secondary', tertiary:'text-on-tertiary' };
+    const avatarBg = { primary:'bg-secondary text-on-secondary', secondary:'bg-tertiary text-on-tertiary', tertiary:'bg-primary text-on-primary' };
+    const TODAY = 9; // sample "today"
+    const grid = document.getElementById('calGrid');
+    const daysInMonth = 30;
+    const cells = [];
+    cells.push({day:31, muted:true});       // May 31 (Sun)
+    for(let d=1; d<=daysInMonth; d++) cells.push({day:d, muted:false});
+    let next = 1;
+    while(cells.length < 42) cells.push({day:next++, muted:true}); // fill 6 rows
+
+    cells.forEach((cell, idx) => {
+        const isSat = idx % 7 === 6, isSun = idx % 7 === 0;
+        const div = document.createElement('div');
+        div.className = 'gcal-cell' + (cell.muted ? ' opacity-40' : '');
+        const isToday = !cell.muted && cell.day === TODAY;
+        const numColor = isToday ? 'today' : (cell.muted ? '' : (isSun ? 'text-error' : (isSat ? 'text-primary' : '')));
+        div.innerHTML = `<span class="daynum ${numColor}">${cell.day}</span>`;
+        if(!cell.muted && events[cell.day]){
+            events[cell.day].forEach(ev => {
+                div.innerHTML += `<div class="ev ${colorMap[ev.c]}">${ev.t}</div>`;
+            });
+        }
+        if(isToday) div.classList.add('selected');
+        grid.appendChild(div);
+    });
+
+    const label = document.getElementById('selectedDateLabel');
+    const detailGrid = document.getElementById('detailGrid');
+    const dow = ['일','월','화','수','목','금','토'];
+
+    function renderDetail(day, dowIdx){
+        label.textContent = `2026년 6월 ${day}일 (${dow[dowIdx]})`;
+        const list = events[day] || [];
+        if(list.length === 0){
+            detailGrid.innerHTML = `<div class="col-span-full flex flex-col items-center justify-center py-12 text-on-surface-variant">
+                <span class="material-symbols-outlined text-4xl mb-2 opacity-50">event_busy</span>
+                <p class="text-sm">선택한 날짜에 등록된 트레이닝이 없습니다.</p></div>`;
+            return;
+        }
+        detailGrid.innerHTML = list.map(ev => `
+            <div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-outline-variant">
+                <div class="relative h-24 bg-gradient-to-br ${cardHeader[ev.c]} flex items-center justify-center">
+                    <span class="${onHeader[ev.c]} text-xl font-extrabold tracking-tight">${ev.chapter.replace(' 챕터','').replace('(4개 챕터)','')}</span>
+                    <span class="absolute top-2.5 right-2.5 bg-surface/90 text-on-surface px-2.5 py-0.5 rounded-full text-[11px] font-bold">${ev.status}</span>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-sm font-bold mb-3 truncate">${ev.t}</h4>
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-full ${avatarBg[ev.c]} flex items-center justify-center text-xs font-bold flex-shrink-0">${ev.trainer.charAt(0)}</div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold truncate">${ev.trainer} ${ev.role}</p>
+                            <p class="text-[11px] text-on-surface-variant truncate">${ev.chapter}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 text-on-surface-variant min-w-0">
+                            <span class="material-symbols-outlined text-[16px]">schedule</span><span class="text-xs truncate">${ev.time}</span>
+                        </div>
+                        <button class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-sm font-semibold active:scale-95 transition-transform flex-shrink-0">신청</button>
+                    </div>
+                </div>
+            </div>`).join('');
+    }
+
+    document.querySelectorAll('#calGrid .gcal-cell').forEach((c, idx) => {
+        c.addEventListener('click', () => {
+            const cell = cells[idx];
+            if(cell.muted) return;
+            document.querySelectorAll('#calGrid .gcal-cell').forEach(x => x.classList.remove('selected'));
+            c.classList.add('selected');
+            renderDetail(cell.day, idx % 7);
+            document.querySelector('section').scrollIntoView({behavior:'smooth', block:'nearest'});
+        });
+    });
+
+    // initial render for sample "today" (June 9 = Tuesday, idx%7 = 2)
+    renderDetail(TODAY, 2);
+</script>
+</body></html>
