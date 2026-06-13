@@ -2,9 +2,9 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BNI® | The World's Largest Referral Networking Organization</title>
+<title>BNI 코리아 | THE REAL MBA — 내셔널 오피스</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
 <script>
   tailwind.config = {
@@ -13,13 +13,14 @@
         red:{DEFAULT:"#e11b2b", dark:"#c0121f", soft:"#fdebed"},
         ink:"#222428", body:"#5b6168", soft:"#eef0f2", line:"#e7e8ea"
       },
-      fontFamily:{ sans:["Montserrat","sans-serif"] },
+      fontFamily:{ sans:["Pretendard","sans-serif"] },
       borderRadius:{ xl:"0.9rem","2xl":"1.25rem","3xl":"1.75rem" }
     }}
   }
 </script>
 <style>
-  body{font-family:'Montserrat',sans-serif;color:#222428;background:#fff;-webkit-font-smoothing:antialiased;}
+  body{font-family:'Pretendard',sans-serif;color:#222428;background:#fff;-webkit-font-smoothing:antialiased;}
+  .head{font-family:'Pretendard',sans-serif;}
   .material-symbols-outlined{font-size:20px;vertical-align:middle;}
   .wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px;}
   .btn{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;font-weight:700;font-size:14px;letter-spacing:.05em;padding:14px 30px;transition:.2s;text-transform:uppercase;}
@@ -60,7 +61,8 @@
     -webkit-mask:var(--notch) no-repeat;mask:var(--notch) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;}
   .bni-hero__media img,.bni-hero__media video{width:100%;height:100%;object-fit:cover;display:block;}
   .bni-hero__headline{position:absolute;left:34px;bottom:22px;color:#fff;font-size:clamp(32px,5.5vw,75px);font-weight:800;line-height:.95;letter-spacing:-.04em;text-shadow:0 2px 8px rgba(0,0,0,.18);}
-  /* word rotator: "Grow Your" fixed, last word slides down/changes */
+  .bni-hero__eyebrow{display:block;font-size:.30em;font-weight:700;letter-spacing:.04em;line-height:1.2;margin-bottom:.5em;opacity:.92;text-transform:none;}
+  /* word rotator: "BNI : THE REAL" fixed, last word slides down/changes */
   .rot{display:inline-block;overflow:hidden;height:1em;line-height:1;vertical-align:bottom;}
   .rot__in{display:block;animation:rotWords 9s infinite cubic-bezier(.86,0,.07,1);}
   .rot__in>span{display:block;height:1em;line-height:1;}
@@ -108,15 +110,15 @@
 <a class="bni-logo" href="#">BNI</a>
 <nav class="bni-nav">
 <ul class="bni-nav__menu">
-<li><a href="#">The BNI Experience</a></li>
-<li><a href="#">Our Global Community</a></li>
-<li><a href="#">My BNI Story</a></li>
-<li><a href="#">BNI Franchising</a></li>
-<li><a href="#">About BNI</a></li>
+<li><a href="#">Training Home</a></li>
+<li><a href="renewal.html">Schedule</a></li>
+<li><a href="#">Main-Class</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Join us</a></li>
 </ul>
 <div class="bni-nav__right">
-<a class="bni-nav__email" href="mailto:support@bni.com">support@bni.com</a>
-<a class="bni-nav__cta" href="#">GET INVITED</a>
+<a class="bni-nav__email" href="#">Login</a>
+<a class="bni-nav__cta" href="#">Register</a>
 <button class="bni-nav__burger" aria-label="menu"><span></span><span></span><span></span></button>
 </div>
 </nav>
@@ -132,9 +134,9 @@
 <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
 <source src="https://videos.pexels.com/video-files/3252919/3252919-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
 </video>
-<div class="bni-hero__headline">Grow Your <span class="rot"><span class="rot__in"><span>Business</span><span>Network</span><span>Revenue</span><span>Future</span><span>Business</span></span></span></div>
+<div class="bni-hero__headline"><span class="bni-hero__eyebrow">BNI Korea National Office Presents</span>BNI : THE REAL <span class="rot"><span class="rot__in"><span>MBA</span><span>NETWORK</span><span>REFERRAL</span><span>GROWTH</span><span>MBA</span></span></span></div>
 </div>
-<a href="#" class="bni-hero__cta-btn">GET INVITED</a>
+<a href="#" class="bni-hero__cta-btn">JOIN US</a>
 </div>
 </section>
 
@@ -142,10 +144,10 @@
 <section class="wrap pb-16">
 <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 <h2 class="text-3xl md:text-[40px] font-extrabold leading-snug">
-Join <span class="text-red">BNI</span><sup class="text-base align-super">®</sup>, the world's largest and most successful <span class="text-red">referral networking organization</span>
+<span class="text-red">Changing the Way</span><br/>the World Does Business
 </h2>
 <div>
-<p class="text-body text-lg leading-relaxed">Discover how BNI Members around the world meet each week locally to pass millions of referrals to each other worth billions of dollars in revenue for businesses just like yours.</p>
+<p class="text-body text-lg leading-relaxed">BNI 코리아 내셔널 오피스가 제안하는 검증된 비즈니스 네트워킹. 전국의 멤버들이 매주 모여 서로에게 레퍼럴을 전달하고, 단계별 프로그램으로 비즈니스를 함께 성장시킵니다. 당신의 차례입니다.</p>
 <div class="mt-8 relative rounded-2xl overflow-hidden group cursor-pointer">
 <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&h=500&q=80" alt=""/>
 <div class="absolute inset-0 bg-black/30 grid place-items-center">
@@ -166,149 +168,86 @@ Join <span class="text-red">BNI</span><sup class="text-base align-super">®</sup
 <div><p class="text-4xl lg:text-5xl font-extrabold text-red">77</p><p class="mt-2 text-body text-sm font-semibold">Countries</p></div>
 <div><p class="text-4xl lg:text-5xl font-extrabold text-red">17.9M</p><p class="mt-2 text-body text-sm font-semibold">Member Referrals</p><p class="text-xs text-body/60">Last 12 Months</p></div>
 </div>
-<div class="text-center mt-12"><a class="btn btn-red">Find a Chapter</a></div>
+<div class="text-center mt-12"><a class="btn btn-red" href="renewal.html">Schedule 보기</a></div>
 </div>
 </section>
 
-<!-- ===== Three Pillars ===== -->
-<section class="wrap py-20 space-y-24">
-<!-- Pillar 1 -->
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div class="rounded-3xl overflow-hidden"><img class="w-full h-[380px] object-cover" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&h=600&q=80" alt=""/></div>
-<div>
-<p class="text-red font-bold tracking-widest uppercase text-sm mb-3">Beyond Networking</p>
-<h2 class="text-3xl md:text-4xl font-extrabold leading-snug">Build Your Professional Network</h2>
-<blockquote class="text-xl text-body leading-relaxed mt-6 border-l-4 border-red pl-5">“BNI isn't just networking—it's a game changer that transforms businesses and lives.”</blockquote>
-<p class="mt-4 font-semibold text-ink">Ameer Ahammed <span class="text-body font-normal">· Nada Happiness Trading, Oman</span></p>
+<!-- ===== Programs ===== -->
+<section class="wrap py-20">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<p class="text-red font-bold tracking-widest uppercase text-sm mb-3">Programs</p>
+<h2 class="text-3xl md:text-4xl font-extrabold">BNI 핵심 프로그램</h2>
+<p class="text-body text-lg mt-4">멤버의 성장을 단계별로 이끄는 4가지 프로그램입니다.</p>
 </div>
-</div>
-<!-- Pillar 2 -->
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div class="md:order-2 rounded-3xl overflow-hidden"><img class="w-full h-[380px] object-cover" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&h=600&q=80" alt=""/></div>
-<div class="md:order-1">
-<p class="text-red font-bold tracking-widest uppercase text-sm mb-3">Scale Up</p>
-<h2 class="text-3xl md:text-4xl font-extrabold leading-snug">Grow Your Business Exponentially</h2>
-<blockquote class="text-xl text-body leading-relaxed mt-6 border-l-4 border-red pl-5">“I've achieved a great ROI with $736,000 in referrals and $110,000 in return.”</blockquote>
-<p class="mt-4 font-semibold text-ink">Paul Tommey <span class="text-body font-normal">· Realtor-Property Manager, USA</span></p>
-</div>
-</div>
-<!-- Pillar 3 -->
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div class="rounded-3xl overflow-hidden"><img class="w-full h-[380px] object-cover" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&h=600&q=80" alt=""/></div>
-<div>
-<p class="text-red font-bold tracking-widest uppercase text-sm mb-3">Lifelong Learning</p>
-<h2 class="text-3xl md:text-4xl font-extrabold leading-snug">Become a Master Connector</h2>
-<blockquote class="text-xl text-body leading-relaxed mt-6 border-l-4 border-red pl-5">“I used to struggle to get trusted logistic partners in other countries — BNI changed that completely.”</blockquote>
-<p class="mt-4 font-semibold text-ink">Ernest Buabeng <span class="text-body font-normal">· Clearing & Forwarding, Ghana</span></p>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="programs"></div>
 </section>
 
 <!-- ===== 3 Steps to Success ===== -->
 <section class="bg-ink text-white">
 <div class="wrap py-20 text-center">
-<h2 class="text-3xl md:text-4xl font-extrabold">3 Steps to Success</h2>
-<p class="text-white/70 text-lg mt-4 max-w-2xl mx-auto">Get invited to a BNI networking meeting and witness the power of referrals in action.</p>
+<h2 class="text-3xl md:text-4xl font-extrabold">3단계로 시작하세요</h2>
+<p class="text-white/70 text-lg mt-4 max-w-2xl mx-auto">BNI 트레이닝 미팅에 초대받아, 레퍼럴의 힘을 직접 경험하세요.</p>
 <div class="grid md:grid-cols-3 gap-8 mt-14 text-left">
-<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">1</p><h3 class="text-xl font-bold mt-3">Visit a BNI chapter</h3><p class="text-white/70 mt-2">and experience the power of the BNI network</p></div>
-<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">2</p><h3 class="text-xl font-bold mt-3">Meet the Members</h3><p class="text-white/70 mt-2">and learn how they can help you grow your business</p></div>
-<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">3</p><h3 class="text-xl font-bold mt-3">Apply</h3><p class="text-white/70 mt-2">to become a Member of a BNI Chapter</p></div>
+<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">1</p><h3 class="text-xl font-bold mt-3">챕터 방문하기</h3><p class="text-white/70 mt-2">가까운 지역 챕터의 위클리 미팅에 게스트로 참여합니다</p></div>
+<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">2</p><h3 class="text-xl font-bold mt-3">멤버 만나기</h3><p class="text-white/70 mt-2">멤버들이 어떻게 당신의 비즈니스 성장을 돕는지 확인합니다</p></div>
+<div class="bg-white/5 rounded-2xl p-8 border border-white/10"><p class="text-5xl font-black text-red">3</p><h3 class="text-xl font-bold mt-3">멤버 신청</h3><p class="text-white/70 mt-2">BNI 챕터의 정식 멤버로 가입합니다</p></div>
 </div>
-<div class="mt-14"><a class="btn btn-red">Get Invited</a></div>
+<div class="mt-14"><a class="btn btn-red">Join us</a></div>
 </div>
 </section>
 
-<!-- ===== Testimonials ===== -->
+<!-- ===== News ===== -->
 <section class="wrap py-20">
-<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">What Our Members Say</h2>
-<div class="testi-track" id="testi"></div>
-</section>
-
-<!-- ===== Disclaimer ===== -->
-<section class="bg-soft">
-<div class="wrap py-10">
-<p class="text-xs text-body/70 leading-relaxed max-w-4xl mx-auto text-center">This information is based on historical BNI Member self-reported data as of December 31st, 2025, and represents collective results from BNI Members worldwide over the last 12 months. Errors in self-reporting of data or in subsequent analysis are possible. Therefore, the information herein should only be viewed as representative in nature.</p>
+<div class="flex items-end justify-between mb-10">
+<div>
+<p class="text-red font-bold tracking-widest uppercase text-sm mb-2">News</p>
+<h2 class="text-3xl md:text-4xl font-extrabold">내셔널 오피스 공지사항</h2>
 </div>
+<a class="btn btn-line hidden md:inline-flex">전체 보기</a>
+</div>
+<ul class="border-t border-line" id="newsList"></ul>
 </section>
 
 <!-- ===== Footer ===== -->
 <footer class="bg-ink text-white/60">
 <div class="wrap py-16">
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
-<div class="col-span-2 lg:col-span-1">
-<p class="text-3xl font-black text-red mb-4">BNI<sup class="text-xs">®</sup></p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+<div class="col-span-2 md:col-span-1">
+<p class="text-3xl font-black text-red mb-4">BNI<sup class="text-xs">®</sup> Korea</p>
 <p class="text-sm leading-relaxed">Changing the Way the World Does Business®</p>
-<a class="btn btn-red mt-6 !py-2.5 !px-7">Get Invited</a>
+<a class="btn btn-red mt-6 !py-2.5 !px-7">Join us</a>
 </div>
 <div>
-<p class="text-white font-bold mb-4 text-sm">The Experience</p>
+<p class="text-white font-bold mb-4 text-sm">메뉴</p>
 <ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-white">The BNI Experience</a></li>
-<li><a class="hover:text-white">Our Global Community</a></li>
-<li><a class="hover:text-white">My BNI Story</a></li>
-<li><a class="hover:text-white">BNI Franchising</a></li>
+<li><a class="hover:text-white">Training Home</a></li>
+<li><a href="renewal.html" class="hover:text-white">Schedule</a></li>
+<li><a class="hover:text-white">Main-Class</a></li>
+<li><a class="hover:text-white">News</a></li>
+<li><a class="hover:text-white">Join us</a></li>
 </ul>
 </div>
 <div>
-<p class="text-white font-bold mb-4 text-sm">About Us</p>
+<p class="text-white font-bold mb-4 text-sm">고객지원</p>
 <ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-white">About Us</a></li>
-<li><a class="hover:text-white">Leadership</a></li>
-<li><a class="hover:text-white">National Directors</a></li>
-<li><a class="hover:text-white">Our Founder</a></li>
-<li><a class="hover:text-white">BNI® Foundation</a></li>
+<li><a class="hover:text-white">Login</a></li>
+<li><a class="hover:text-white">Register</a></li>
+<li><a class="hover:text-white">Store</a></li>
+<li><a class="hover:text-white">자주 묻는 질문</a></li>
 </ul>
 </div>
 <div>
-<p class="text-white font-bold mb-4 text-sm">The Latest</p>
-<ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-white">Blog &amp; News</a></li>
-<li><a class="hover:text-white">In The Media</a></li>
-<li><a class="hover:text-white">Networking Tips</a></li>
-<li><a class="hover:text-white">Global Events</a></li>
-<li><a class="hover:text-white">Careers</a></li>
-</ul>
-</div>
-<div>
-<p class="text-white font-bold mb-4 text-sm">Join BNI</p>
-<ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-white">Chapter Map</a></li>
-<li><a class="hover:text-white">Start a Chapter</a></li>
-<li><a class="hover:text-white">Exclusive Member Benefits</a></li>
-<li><a class="hover:text-white">Contact Us</a></li>
-</ul>
-</div>
-<div>
-<p class="text-white font-bold mb-4 text-sm">Member Services</p>
-<ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-white">BNI Connect</a></li>
-<li><a class="hover:text-white">BNI Academy</a></li>
-<li><a class="hover:text-white">BNI Brandshare</a></li>
-<li><a class="hover:text-white">BNI US Store</a></li>
-<li><a class="hover:text-white">BNI Global Store</a></li>
+<p class="text-white font-bold mb-4 text-sm">문의</p>
+<ul class="space-y-2.5 text-sm leading-relaxed">
+<li>Tel <span class="text-white">02-6261-8838</span></li>
+<li>평일 10:00–18:00</li>
+<li>서울 성동구 뚝섬로1길 25<br/>서울숲한라에코밸리 3층 301호</li>
 </ul>
 </div>
 </div>
-<div class="grid md:grid-cols-2 gap-8 mt-14 pt-8 border-t border-white/10">
-<div class="text-sm space-y-1">
-<p>In U.S. <span class="text-white">(800)-825-8286</span></p>
-<p>Outside U.S. <span class="text-white">support@bni.com</span></p>
-<p>3430 Toringdon Way, Suite 300 Charlotte, NC 28277</p>
-</div>
-<div class="md:text-right">
-<p class="text-white font-bold text-sm">BNI SuccessNet™</p>
-<p class="text-sm mt-1">Sign up for exclusive networking tips and more.</p>
-<div class="flex md:justify-end gap-4 mt-4">
-<a class="hover:text-white"><span class="material-symbols-outlined">public</span></a>
-<a class="hover:text-white"><span class="material-symbols-outlined">work</span></a>
-<a class="hover:text-white"><span class="material-symbols-outlined">photo_camera</span></a>
-<a class="hover:text-white"><span class="material-symbols-outlined">smart_display</span></a>
-</div>
-</div>
-</div>
-<div class="flex flex-col md:flex-row justify-between gap-3 mt-10 pt-8 border-t border-white/10 text-xs">
-<div class="flex gap-5"><a class="hover:text-white">Cookie Policy</a><a class="hover:text-white">Privacy Policy</a><a class="hover:text-white">Terms and Conditions</a></div>
-<p>© 2026 BNI Global, LLC</p>
+<div class="flex flex-col md:flex-row justify-between gap-3 mt-14 pt-8 border-t border-white/10 text-xs">
+<p>(주)BNI 코리아 · 대표 윤형석 · 사업자등록번호 220-87-68060 · 통신판매업 신고</p>
+<div class="flex gap-5"><a class="hover:text-white">이용약관</a><a class="hover:text-white">개인정보처리방침</a><p>© 2026 BNI Korea</p></div>
 </div>
 </div>
 </footer>
@@ -316,24 +255,35 @@ Join <span class="text-red">BNI</span><sup class="text-base align-super">®</sup
 <button class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-red text-white grid place-items-center shadow-xl hover:bg-red-dark z-50"><span class="material-symbols-outlined">chat_bubble</span></button>
 
 <script>
-  const testimonials=[
-    ["BNI has shown me how to raise the bar and rewrite my business blueprint.","Farzana Suri","Coaching, India"],
-    ["Over 86% of my clients come through referrals from BNI Members.","Jennie B","Sales, United States"],
-    ["BNI has been a game changer for my business.","Manuel Gutierrez","Goper Coma S.L, Spain"],
-    ["Friendships, connection & likeminded people make the added bonus of increased business & income worthwhile.","Matthew S","Real Estate, Australia"],
-    ["Today we own a Pvt. Ltd. Firm that has achieved Rs 1.5 Cr in business within 9 months, with 95% of it coming from BNI.","Bhavesh Vora","Engineering Solutions, India"],
-    ["Being part of BNI has been one of the most valuable decisions for my business.","Dr Prince Sodha","Founder & Creative Director, India"],
-    ["I secured my first piece of business through relationship building within just 3 months.","Payal Ghadge","IT Services, India"],
-    ["There is no strategy that benefits so many areas in one's life than BNI!","Dr. Adriana Cortés","Health & Wellness, Colombia"],
-    ["I've shifted my business to one developed via referrals with zero competition.","Kent Raymer","Construction, United States"],
-    ["90% of my business comes through BNI referrals.","Ankit Patel","Financial Services, India"],
+  // BNI 핵심 프로그램 4개
+  const programs=[
+    {t:"Member Success Program", k:"MSP", d:"신규 멤버가 BNI 시스템에 빠르게 적응하고 성과를 내도록 돕는 기본 트레이닝.", img:"photo-1517245386807-bb43f82c33c4"},
+    {t:"PowerTeam Program", k:"파워팀", d:"업종별 협업 팀을 구성해 멤버 간 레퍼럴 시너지를 극대화합니다.", img:"photo-1600880292203-757bb62b4baf"},
+    {t:"Custom Sales Team Building", k:"맞춤 영업팀", d:"멤버 네트워크를 나만의 외부 영업팀처럼 운영하는 전략을 배웁니다.", img:"photo-1521737604893-d14cc237f11d"},
+    {t:"Lifestyle Integration", k:"라이프스타일", d:"비즈니스와 삶을 연결해 지속 가능한 네트워킹 습관을 만듭니다.", img:"photo-1543269865-cbf427effbad"},
   ];
-  document.getElementById('testi').innerHTML = testimonials.map(([q,n,r])=>`
-    <div class="card p-7 flex-shrink-0 w-[320px] flex flex-col">
-      <span class="material-symbols-outlined text-red !text-[36px]">format_quote</span>
-      <p class="text-ink leading-relaxed mt-2 flex-1">${q}</p>
-      <p class="mt-5 font-bold text-sm">${n}</p>
-      <p class="text-xs text-body">${r}</p>
-    </div>`).join('');
+  document.getElementById('programs').innerHTML = programs.map(c=>`
+    <a class="card block">
+      <img class="ratio-43" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" src="https://images.unsplash.com/${c.img}?auto=format&fit=crop&w=700&h=525&q=80" alt=""/>
+      <div class="p-6">
+        <span class="inline-block bg-red-soft text-red text-xs font-bold px-3 py-1 rounded-full mb-3">${c.k}</span>
+        <h3 class="font-extrabold leading-snug">${c.t}</h3>
+        <p class="text-body text-sm mt-3 leading-relaxed">${c.d}</p>
+      </div>
+    </a>`).join('');
+
+  // NEWS 내셔널 오피스 공지사항
+  const news=[
+    ["[내셔널 오피스 공지] 비지터 초대 노하우 전격 공개!!","22시간 전"],
+    ["[이벤트] 2026 내셔널 컨퍼런스 기간 한정 비지터 특별 혜택!","2026.06.10"],
+    ["[내셔널 오피스 공지] 2026년 6월 트레이닝 마감 일정 안내","2026.06.05"],
+    ["[내셔널 오피스 공지] 내셔널 컨퍼런스 개최에 따른 고객센터 응대 지연 안내 (6/1)","2026.06.01"],
+    ["[트래픽 라이트] 비밀글입니다.","2026.05.28"],
+  ];
+  document.getElementById('newsList').innerHTML = news.map(([t,d])=>`
+    <li class="flex items-center justify-between gap-4 py-4 border-b border-line hover:bg-soft transition px-2 -mx-2 rounded cursor-pointer">
+      <span class="text-ink font-medium truncate hover:text-red">${t}</span>
+      <span class="text-body text-sm flex-shrink-0">${d}</span>
+    </li>`).join('');
 </script>
 </body></html>
